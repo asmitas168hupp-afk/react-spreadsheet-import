@@ -14,7 +14,7 @@ export const defaultRSIProps: Partial<RsiProps<any>> = {
   autoMapSelectValues: false,
   allowInvalidSubmit: true,
   autoMapDistance: 2,
-  isNavigationEnabled: false,
+  isNavigationEnabled: true,
   translations: translations,
   uploadStepHook: async (value) => value,
   selectHeaderStepHook: async (headerValues, data) => ({ headerValues, data }),

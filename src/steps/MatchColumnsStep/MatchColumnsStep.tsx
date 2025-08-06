@@ -12,6 +12,7 @@ import type { Field, RawData } from "../../types"
 import { getMatchedColumns } from "./utils/getMatchedColumns"
 import { UnmatchedFieldsAlert } from "../../components/Alerts/UnmatchedFieldsAlert"
 import { findUnmatchedRequiredFields } from "./utils/findUnmatchedRequiredFields"
+import { FeildTableColumn } from "./components/FieldTableColumn"
 
 export type MatchColumnsProps<T extends string> = {
   data: RawData[]
@@ -182,7 +183,7 @@ export const MatchColumnsStep = <T extends string>({
         onBack={onBack}
         isLoading={isLoading}
         userColumn={(column) => (
-          <UserTableColumn
+          <FeildTableColumn
             column={column}
             onIgnore={onIgnore}
             onRevertIgnore={onRevertIgnore}

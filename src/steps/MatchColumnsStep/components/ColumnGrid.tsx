@@ -35,6 +35,41 @@ export const ColumnGrid = <T extends string>({
         <Flex
           flex={1}
           display="grid"
+          gridTemplateColumns="1fr 1fr" // Two side-by-side columns
+          gridTemplateRows={`auto repeat(${columns.length}, auto)`} // Header row + data rows
+          gap={4}>
+            {/* Header Row */}
+            <Box gridColumn="1/2">
+              <Text sx={styles.title}>{translations.matchColumnsStep.userTableTitle}</Text>
+            </Box>
+            <Box gridColumn="2/3">
+              <Text sx={styles.title}>{translations.matchColumnsStep.templateTitle}</Text>
+            </Box>
+
+            {/* User + Template Columns */}
+            {columns.map((column, index) => [
+              <Box
+                gridColumn="1/2"
+                gridRow={index + 2}
+                pt={3}
+                key={`user-${column.header}-${index}`}
+              >
+                {userColumn(column)}
+              </Box>,
+              <Box
+                gridColumn="2/3"
+                gridRow={index + 2}
+                pt={3}
+                key={`template-${column.header}-${index}`}
+              >
+                {templateColumn(column)}
+              </Box>,
+            ])}
+        </Flex>
+
+        {/* <Flex
+          flex={1}
+          display="grid"
           gridTemplateRows="auto auto auto 1fr"
           gridTemplateColumns={`0.75rem repeat(${columns.length}, minmax(18rem, auto)) 0.75rem`}
         >
@@ -63,7 +98,7 @@ export const ColumnGrid = <T extends string>({
               {templateColumn(column)}
             </Box>
           ))}
-        </Flex>
+        </Flex> */}
       </ModalBody>
       <ContinueButton
         isLoading={isLoading}

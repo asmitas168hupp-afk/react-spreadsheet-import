@@ -54,11 +54,16 @@
     "react-dom": ">=18"
   },
   "dependencies": {
+    "@chakra-ui/icon": "^3.2.0",
+    "@chakra-ui/popper": "^3.1.0",
     "@chakra-ui/react": "^2.8.1",
+    "@chakra-ui/react-context": "^2.1.0",
+    "@chakra-ui/shared-utils": "^2.0.4",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "chakra-react-select": "^4.7.5",
     "chakra-ui-steps": "2.0.4",
+    "esbuild": "^0.18.20",
     "framer-motion": "^10.16.4",
     "js-levenshtein": "1.1.6",
     "lodash": "4.17.21",
